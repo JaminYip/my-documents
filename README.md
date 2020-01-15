@@ -1,6 +1,6 @@
 # my-documents
 ドキュメント格納用
 
-|-|-|-|-|
+|#|-|ディレクトリ|-|
 |---|---|---|---|
-|#1|angularとflask環境構築手順|angular-flask_env.md||
+|#1|AngularとFlask開発環境構築|/angular-flask/||
