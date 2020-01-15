@@ -1,16 +1,19 @@
-#AngularとFlask環境構築
+#AngularとFlask開発環境構築
+
+pycharmインストール  
+https://www.jetbrains.com/ja-jp/pycharm/
 
 Node.jsインストール  
-※公式サイトから
-
 https://nodejs.org/ja/
 
-|コマンド|バージョン|備考|
-|----|----|----|
-|node --version|v12.14.1|installed at 2020 1/11|
-|npm --version|6.13.4|〃|
+|#|コマンド|バージョン|環境|
+|----|----|----|----|
+|#1|node --version|v12.14.1|macOS 10.14|
+|#2|npm --version|6.13.4|〃|
 
-①コマンド「[sudo] npm install -g angular-cli」を実行する
+`※macOSで構築、Windows10でも検証済`
+
+①コマンド「[sudo] npm install -g @angular-cli」を実行する
 
 ⚠️以下のエラーが発生した場合
 ````
@@ -47,18 +50,25 @@ echo ' export PATH=~/.npm-global/bin:$PATH' >> ~/.bash_profile
 source ~/.bash_profile
 ````
 
-②コマンド「ng new [プロジェクト名]」を実行する
+②コマンド「ng new [プロジェクト名]」を実行する  
+※ディレクトリ構成「helloworld/MyApp/」
+````
+Would you like to add Angular routing? Yes
+Which stylesheet format would you like to use? CSS
+※必要に応じて適宜選択する
+````
 
 ⚠️ngがインストールされていて、「bash: ng: command not found」が出力された場合
 ````
 コマンド「alias ng="/Users/********/.npm-global/lib/node_modules/@angular/cli/bin/ng"」を実行する  
 ※ng="〜"はインストールした場所によって変わるため、適宜変更する。  
-「npm install -g angular/cli」を実行時にインストール場所がターミナルに表示されているはずなので、それを入力する。
+「npm install -g @angular/cli」を実行時にインストール場所がターミナルに表示されているはずなので、それを入力する。
 ````
 
-③pythonファイルを作成
+③pythonファイルを作成（flaskパッケージをインストールしておく※pip install flask）  
+※ディレクトリ構成「helloworld/app.py」
 
-app.py
+`app.py`
 ````
 from flask import Flask, render_template
 
@@ -73,4 +83,24 @@ def hello():
 app.run()
 ````
 
-④コマンド「ng build --base-href /static/」を実行する
+④ディレクトリ「/static/」、「/templates/」を作成する
+
+|#|ディレクトリ構成|
+|----|----|
+|#1|helloworld/static/|
+|#2|helloworld/templates/|
+
+⑤コマンド「ng build --base-href /static/」を実行する  
+※コマンド実行時のカレントディレクトリは「helloworld/MyApp」
+
+⑥ビルドしたファイルをコピーする
+
+|#|対象ファイル|コピー先ディレクトリ|
+|----|----|----|
+|#1|helloworld/MyApp/dist/MyApp/*.js|helloworld/static/|
+|#2|helloworld/MyApp/dist/MyApp/*.map|〃|
+|#3|helloworld/MyApp/dist/MyApp/index.html|helloworld/templates/|
+
+⑦app.pyを実行し、ブラウザでlocalhostに接続する
+
+![](./angular-flask.png)
