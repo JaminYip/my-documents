@@ -1,4 +1,4 @@
-#AngularとFlask開発環境構築
+# AngularとFlask開発環境構築
 
 pycharmインストール  
 https://www.jetbrains.com/ja-jp/pycharm/
