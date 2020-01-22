@@ -13,7 +13,7 @@ https://nodejs.org/ja/
 
 `※macOSで構築、Windows10でも検証済`
 
-①コマンド「[sudo] npm install -g @angular-cli」を実行する
+①コマンド「[sudo] npm install -g @angular/cli」を実行する
 
 ⚠️以下のエラーが発生した場合
 ````
