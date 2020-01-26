@@ -7,7 +7,7 @@ Node.jsインストール
 https://nodejs.org/ja/
 
 |#|コマンド|バージョン|環境|
-|----|----|----|----|
+|---|---|---|---|
 |#1|node --version|v12.14.1|macOS 10.14|
 |#2|npm --version|6.13.4|〃|
 
@@ -86,7 +86,7 @@ app.run()
 ④ディレクトリ「/static/」、「/templates/」を作成する
 
 |#|ディレクトリ構成|
-|----|----|
+|---|---|
 |#1|helloworld/static/|
 |#2|helloworld/templates/|
 
@@ -96,7 +96,7 @@ app.run()
 ⑥ビルドしたファイルをコピーする
 
 |#|対象ファイル|コピー先ディレクトリ|
-|----|----|----|
+|---|---|---|
 |#1|helloworld/MyApp/dist/MyApp/*.js|helloworld/static/|
 |#2|helloworld/MyApp/dist/MyApp/*.map|〃|
 |#3|helloworld/MyApp/dist/MyApp/index.html|helloworld/templates/|
